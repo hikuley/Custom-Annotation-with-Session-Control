@@ -1,7 +1,7 @@
 package com.ibrahimkuley.model;
 
 /**
- * Created by ÝLKER KIRTAN on 14.10.2015.
+ * Created by hikuley on 14.10.2015.
  */
 public class User {
     private String id;

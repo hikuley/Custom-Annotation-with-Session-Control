@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by �LKER KIRTAN on 13.10.2015.
+ * Created by hikuley on 13.10.2015.
  */
 @Aspect
 public class RequiredLoginAspect {
