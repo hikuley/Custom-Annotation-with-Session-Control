@@ -1,4 +1,4 @@
-package com.ibrahimkuley.cotroller;
+package com.ibrahimkuley.controller;
 
 import com.ibrahimkuley.aspect.RequiredLogin;
 import com.ibrahimkuley.model.User;
@@ -22,10 +22,17 @@ public class ProjectController {
     @Autowired
     private HttpServletRequest context;
 
-    @RequiredLogin
+    @RequiredLogin // require login for page or url
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         model.addAttribute("message", "welcome to home page");
+        return "page";
+    }
+
+
+    @RequestMapping(value = "/home2", method = RequestMethod.GET)
+    public String homePage2(ModelMap model) {
+        model.addAttribute("message", "welcome to home page2");
         return "page";
     }
 
@@ -53,21 +60,6 @@ public class ProjectController {
         if (session != null) {
             session.invalidate();
         }
-        return "page";
-    }
-
-    @RequiredLogin
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String adminPanel(ModelMap model) {
-        model.addAttribute("message", "here is admin panel,session available");
-        return "page";
-    }
-
-
-    @RequiredLogin
-    @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public String userPanel(ModelMap model) {
-        model.addAttribute("message", "here is admin panel,session available");
         return "page";
     }
 }
